@@ -13,15 +13,15 @@
 
 ---
 
-### **CSV文件通过Blender Skybrush获取
-<img src="gym_pybullet_drones/assets/CSV.gif" alt="formation flight" width="1000"> 
+### CSV文件通过Blender Skybrush获取
+<img src="/gym_formation_drones/assets/CSV.gif" alt="formation flight" width="1000"> 
 
 ### **pid_circle控制示例**
 ```sh
 cd gym_pybullet_drones/examples/
 python3 pid_circle.py
 ```
-<img src="gym_pybullet_drones/assets/pid_circle.gif" alt="formation flight" width="1000"> 
+<img src="/gym_formation_drones/assets/pid_circle.gif" alt="formation flight" width="1000"> 
 
 ### **分步骤数学公式与原理**
 #### **1. 数据读取与初始化**
@@ -32,7 +32,7 @@ raw_waypoints = (df[["x [m]", "y [m]", "z [m]"]].iloc[1:].values) / 6.0
 ```
 
 - **数学公式**：
-  - 初始位置：$\mathbf{p}_0 = \frac{1}{6} \mathbf{d}_0$，其中 $\mathbf{d}_0 = [x_0, y_0, z_0]^T$ 是CSV第一行的坐标。
+  - 初始位置：$ \mathbf{p}_0 = \frac{1}{6} \mathbf{d}_0$，其中 $\mathbf{d}_0 = [x_0, y_0, z_0]^T $ 是CSV第一行的坐标。
   - 原始航点：$\mathbf{p}_i = \frac{1}{6} \mathbf{d}_i$（$i = 1, 2, \ldots, n-1$)，$n$为数据行数，$\mathbf{d}_i$为第$i$行坐标。
   - 时间戳：$t_j = \frac{\text{Time}_j}{1000}$（$j = 1, 2, \ldots, n-1$)，单位为秒。
 - **原理**：
