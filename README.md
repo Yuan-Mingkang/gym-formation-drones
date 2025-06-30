@@ -83,15 +83,15 @@ for idx in np.where(acc_magnitude > max_acc)[0]:
 
 - **数学公式**：
   - **速度计算**：
-    $$`
+    ```math
     \mathbf{v}_k = \frac{\Delta \mathbf{p}}{\Delta t} \approx \frac{\mathbf{p}_{k+1} - \mathbf{p}_{k-1}}{2 \Delta t} \quad \text{(中心差分)}
-    `$$
+    ```
 
 其中$`\Delta t = 1 / f_{\text{ctrl}}`$。
   - **加速度计算**：
-    $$`
+    ```math
     \mathbf{a}_k = \frac{\Delta \mathbf{v}}{\Delta t} \approx \frac{\mathbf{v}_{k+1} - \mathbf{v}_{k-1}}{2 \Delta t}
-    `$$
+    ```
 
   - **加速度大小**：$`a_k = \|\mathbf{a}_k\| = \sqrt{a_{x,k}^2 + a_{y,k}^2 + a_{z,k}^2}`$。
   - **平滑处理**（当$`a_k > 2g`$）：
